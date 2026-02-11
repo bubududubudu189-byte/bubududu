@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>will you be my person forever</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: #fff5f8;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .yes {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .yes span {
+      display: inline-block;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    #no {
+      background: #ccc;
+      color: #555;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      position: absolute;
+      top: 60%;
+      left: 55%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Will you be my person forever ♾️🫶?</h1>
+  <button class="yes">Yes <span>❤️</span></button>
+</div>
+
+<button id="no">No 💔</button>
+
+<script>
+  const noBtn = document.getElementById("no");
+
+  function moveNo() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  // NO moves ONLY when clicked
+  noBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    moveNo();
+  });
+</script>
+
+</body>
+</html>
